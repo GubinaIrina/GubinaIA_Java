@@ -26,7 +26,6 @@ public class Kotik {
     }
 
     public void setKotik(int prettiness, int weight, String name, String meow, int levelOfFullness) {
-        count++;
         this.prettiness = prettiness;
         this.weight = weight;
         this.name = name;

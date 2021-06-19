@@ -33,8 +33,8 @@ public class Kotik {
     }
 
     public void sleep() {
-        levelOfFullness--;
         if (levelOfFullness > 0) {
+            levelOfFullness--;
             System.out.println("Котик спит");
         } else {
             System.out.println("Котик голоден ");
@@ -42,8 +42,8 @@ public class Kotik {
     }
 
     public void hunts() {
-        levelOfFullness--;
         if (levelOfFullness > 0) {
+            levelOfFullness--;
             System.out.println("Котик охотится");
         } else {
             System.out.println("Котик голоден ");
@@ -51,8 +51,8 @@ public class Kotik {
     }
 
     public void play() {
-        levelOfFullness--;
         if (levelOfFullness > 0) {
+            levelOfFullness--;
             System.out.println("Котик играет с бантиком");
         } else {
             System.out.println("Котик голоден ");
@@ -60,8 +60,8 @@ public class Kotik {
     }
 
     public void chaseMouse() {
-        levelOfFullness--;
         if (levelOfFullness > 0) {
+            levelOfFullness--;
             System.out.println("Котик гоняет мышей");
         } else {
             System.out.println("Котик голоден ");
@@ -69,8 +69,8 @@ public class Kotik {
     }
 
     public void washes() {
-        levelOfFullness--;
         if (levelOfFullness > 0) {
+            levelOfFullness--;
             System.out.println("Котик умывается");
         } else {
             System.out.println("Котик голоден ");

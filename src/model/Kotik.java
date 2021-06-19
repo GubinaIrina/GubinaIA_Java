@@ -37,7 +37,7 @@ public class Kotik {
         if (levelOfFullness > 0) {
             System.out.print("Котик спит");
         } else {
-            System.out.print("Котик голоден");
+            System.out.print("Котик голоден ");
         }
     }
 
@@ -45,7 +45,7 @@ public class Kotik {
         if (levelOfFullness > 0) {
             System.out.print("Котик охотится");
         } else {
-            System.out.print("Котик голоден");
+            System.out.print("Котик голоден ");
         }
     }
 
@@ -53,7 +53,7 @@ public class Kotik {
         if (levelOfFullness > 0) {
             System.out.print("Котик играет с бантиком");
         } else {
-            System.out.print("Котик голоден");
+            System.out.print("Котик голоден ");
         }
     }
 
@@ -61,7 +61,7 @@ public class Kotik {
         if (levelOfFullness > 0) {
             System.out.print("Котик гоняет мышей");
         } else {
-            System.out.print("Котик голоден");
+            System.out.print("Котик голоден ");
         }
     }
 
@@ -69,61 +69,76 @@ public class Kotik {
         if (levelOfFullness > 0) {
             System.out.print("Котик носится");
         } else {
-            System.out.print("Котик голоден");
+            System.out.print("Котик голоден ");
         }
     }
 
     public int eat(int satiety) {
         setLevelOfFullness(satiety + levelOfFullness);
-        System.out.print("Котик поел \n");
+        System.out.print("Котик поел");
         return satiety;
     }
 
     public int eat(int satiety, String food) {
+        satiety = 4;
+        food = "корм";
         setLevelOfFullness(satiety + levelOfFullness);
-        System.out.print("Котик съел: " + food + "\n");
+        System.out.print("Котик съел: " + food);
         return satiety;
     }
 
     public void eat() {
-        eat();
+        eat(5, "корм");
     }
 
     public void liveAnotherDay() {
-        if (levelOfFullness <= 0) {
-            eat(5);
-            int x = 0;
-            while (x < 24) {
-                x++;
-                int grade = (int) (Math.random() * 5 + 1);
-                switch (grade) {
-                    case 1:
-                        sleep();
-                        out.print("\n");
-                        break;
-                    case 2:
-                        hunts();
-                        out.print("\n");
-                        break;
-                    case 3:
-                        play();
-                        out.print("\n");
-                        break;
-                    case 4:
-                        chaseMouse();
-                        out.print("\n");
-                        break;
-                    case 5:
-                        run();
-                        out.print("\n");
-                        break;
-                }
+        int x = 0;
+        while (x < 24) {
+            x++;
+            int grade = (int) (Math.random() * 5 + 1);
+            switch (grade) {
+                case 1:
+                    sleep();
+                    if (levelOfFullness <= 0) {
+                        eat();
+                    }
+                    levelOfFullness--;
+                    out.print("\n");
+                    break;
+                case 2:
+                    hunts();
+                    if (levelOfFullness <= 0) {
+                        eat(3);
+                    }
+                    levelOfFullness--;
+                    out.print("\n");
+                    break;
+                case 3:
+                    play();
+                    if (levelOfFullness <= 0) {
+                        eat();
+                    }
+                    levelOfFullness--;
+                    out.print("\n");
+                    break;
+                case 4:
+                    chaseMouse();
+                    if (levelOfFullness <= 0) {
+                        eat();
+                    }
+                    levelOfFullness--;
+                    out.print("\n");
+                    break;
+                case 5:
+                    run();
+                    if (levelOfFullness <= 0) {
+                        eat();
+                    }
+                    levelOfFullness--;
+                    out.print("\n");
+                    break;
             }
         }
-    }
-
-    public int getPrettiness() {
-        return prettiness;
     }
 
     public int getWeight() {
@@ -136,10 +151,6 @@ public class Kotik {
 
     public String getMeow() {
         return meow;
-    }
-
-    public int getLevelOfFullness() {
-        return levelOfFullness;
     }
 
     public int getCount() {

@@ -101,33 +101,37 @@ public class Kotik {
                 case 1:
                     if (levelOfFullness <= 0) {
                         eat();
+                    } else {
+                        sleep();
                     }
-                    sleep();
                     break;
                 case 2:
                     if (levelOfFullness <= 0) {
                         eat();
+                    } else {
+                        hunts();
                     }
-                    hunts();
                     break;
                 case 3:
                     if (levelOfFullness <= 0) {
                         eat();
+                    } else {
+                        play();
                     }
-                    play();
                     break;
                 case 4:
                     if (levelOfFullness <= 0) {
                         eat();
+                    } else {
+                        chaseMouse();
                     }
-                    chaseMouse();
                     break;
                 case 5:
                     if (levelOfFullness <= 0) {
                         eat();
+                    } else {
+                        washes();
                     }
-                    washes();
-                    break;
             }
         }
     }

@@ -102,34 +102,34 @@ public class Kotik {
             int grade = (int) (Math.random() * 5 + 1);
             switch (grade) {
                 case 1:
-                    sleep();
                     if (levelOfFullness <= 0) {
                         eat();
                     }
+                    sleep();
                     break;
                 case 2:
-                    hunts();
                     if (levelOfFullness <= 0) {
-                        eat(3);
+                        eat();
                     }
+                    hunts();
                     break;
                 case 3:
-                    play();
                     if (levelOfFullness <= 0) {
                         eat();
                     }
+                    play();
                     break;
                 case 4:
-                    chaseMouse();
                     if (levelOfFullness <= 0) {
                         eat();
                     }
+                    chaseMouse();
                     break;
                 case 5:
-                    run();
                     if (levelOfFullness <= 0) {
                         eat();
                     }
+                    run();
                     break;
             }
         }

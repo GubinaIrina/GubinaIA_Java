@@ -1,6 +1,5 @@
 package model;
 
-import static java.lang.String.*;
 import static java.lang.System.out;
 
 public class Kotik {
@@ -35,47 +34,52 @@ public class Kotik {
 
     public void sleep() {
         if (levelOfFullness > 0) {
-            System.out.print("Котик спит");
+            System.out.println("Котик спит");
         } else {
-            System.out.print("Котик голоден ");
+            System.out.println("Котик голоден ");
         }
+        levelOfFullness--;
     }
 
     public void hunts() {
         if (levelOfFullness > 0) {
-            System.out.print("Котик охотится");
+            System.out.println("Котик охотится");
         } else {
-            System.out.print("Котик голоден ");
+            System.out.println("Котик голоден ");
         }
+        levelOfFullness--;
     }
 
     public void play() {
         if (levelOfFullness > 0) {
-            System.out.print("Котик играет с бантиком");
+            System.out.println("Котик играет с бантиком");
         } else {
-            System.out.print("Котик голоден ");
+            System.out.println("Котик голоден ");
         }
+        levelOfFullness--;
     }
 
     public void chaseMouse() {
         if (levelOfFullness > 0) {
-            System.out.print("Котик гоняет мышей");
+            System.out.println("Котик гоняет мышей");
         } else {
-            System.out.print("Котик голоден ");
+            System.out.println("Котик голоден ");
         }
+        levelOfFullness--;
     }
 
     public void run() {
         if (levelOfFullness > 0) {
-            System.out.print("Котик носится");
+            System.out.println("Котик носится");
         } else {
-            System.out.print("Котик голоден ");
+            System.out.println("Котик голоден ");
         }
+        levelOfFullness--;
     }
 
     public int eat(int satiety) {
         setLevelOfFullness(satiety + levelOfFullness);
-        System.out.print("Котик поел");
+        System.out.println("Котик поел");
         return satiety;
     }
 
@@ -83,7 +87,7 @@ public class Kotik {
         satiety = 4;
         food = "корм";
         setLevelOfFullness(satiety + levelOfFullness);
-        System.out.print("Котик съел: " + food);
+        System.out.println("Котик съел: " + food);
         return satiety;
     }
 
@@ -102,40 +106,30 @@ public class Kotik {
                     if (levelOfFullness <= 0) {
                         eat();
                     }
-                    levelOfFullness--;
-                    out.print("\n");
                     break;
                 case 2:
                     hunts();
                     if (levelOfFullness <= 0) {
                         eat(3);
                     }
-                    levelOfFullness--;
-                    out.print("\n");
                     break;
                 case 3:
                     play();
                     if (levelOfFullness <= 0) {
                         eat();
                     }
-                    levelOfFullness--;
-                    out.print("\n");
                     break;
                 case 4:
                     chaseMouse();
                     if (levelOfFullness <= 0) {
                         eat();
                     }
-                    levelOfFullness--;
-                    out.print("\n");
                     break;
                 case 5:
                     run();
                     if (levelOfFullness <= 0) {
                         eat();
                     }
-                    levelOfFullness--;
-                    out.print("\n");
                     break;
             }
         }
